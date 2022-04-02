@@ -1,0 +1,110 @@
+import java.util.*;
+import java.io.*;
+
+//terminal symbols
+terminal   MAIN, LP, RP, LCB, RCB, SEMI, COMMA, ID, EPSILON,  LB,  CONST,  RB, _int,
+ _char, _real , _for, in, read, write, PLUS, MIN, MUL, DIV, ASSIGN;
+
+//nonterminal symbols
+non terminal Program, Block,
+            VarSection, StatementList, VarDecl,
+            Type, NameList, Name, DimList, Dimenssion,
+            Statement, Variable, Expression, VarList,
+            ExpressionList, Term, Factor, IndexList,
+            Index;
+
+Program ::= MAIN LP RP Block {:
+    System.out.println("smena 1");
+:};
+Block ::= LCB VarSection StatementList RCB{:
+    System.out.println("smena 2");
+:};
+VarSection ::= VarSection VarDecl {:
+    System.out.println("smena3");
+:} | VarDecl {:
+    System.out.println("smena4");
+:};
+VarDecl ::= Type NameList SEMI {:
+    System.out.println("smena 5");
+:};
+NameList ::= NameList COMMA Name {:
+    System.out.println("smena6");
+:} | Name {:
+    System.out.println("smena7");
+:};
+Name ::= ID DimList {:
+    System.out.println("smena8");
+:};
+DimList ::= DimList Dimenssion {:
+    System.out.println("smena9");
+:} | EPSILON {:
+    System.out.println("smena 10");
+:};
+Dimenssion ::= LB CONST RB {:
+    System.out.println("smena11");
+:};
+Type ::= _int {:
+    System.out.println("smena 12");
+:} | _char {:
+    System.out.println("smena13");
+:} | _real {:
+ System.out.println("smena 14");
+:};
+StatementList ::= StatementList Statement{:
+    System.out.println("smena 15");
+:} | Statement {:
+    System.out.println("smena 16");
+:};
+Statement ::= _for LP Type ID in ID RP Statement{:
+    System.out.println("smena 17");
+:} | Variable ASSIGN Expression SEMI {:
+    System.out.println("smena 18");
+:} | read LP VarList RP SEMI {:
+    System.out.println("smena 19");
+:} | write LP ExpressionList RP SEMI {:
+    System.out.println("smena 20");
+:} | Block {:
+    System.out.println("smena 21");
+:};
+Expression ::= Expression PLUS Term{:
+    System.out.println("smena 22");
+:} | Expression MIN Term {:
+    System.out.println("smena 23");
+:} | Term{:
+    System.out.println("smena 24");
+:};
+Term ::= Term MUL Factor {:
+    System.out.println("smena 25");
+:} | Term DIV Factor {:
+    System.out.println("smena 26");
+:} | Factor {:
+    System.out.println("smena 27");
+:};
+Factor ::= Variable {:
+    System.out.println("smena 28");
+:} | CONST {:
+    System.out.println("smena 29");
+:} | LP Expression RP {:
+    System.out.println("smena 30");
+:};
+Variable ::= ID IndexList {:
+    System.out.println("smena 31");
+:};
+IndexList ::= IndexList Index {:
+    System.out.println("smena 32");
+:} | EPSILON {:
+    System.out.println("smena 33");
+:};
+Index ::= LB Expression RB {:
+    System.out.println("smena 34");
+:};
+VarList ::= VarList COMMA Variable {:
+    System.out.println("smena 35");
+:} | Variable {:
+    System.out.println("smena 36");
+:};
+ExpressionList ::= ExpressionList COMMA Expression {:
+    System.out.println("smena 37");
+:} | Expression {:
+    System.out.println("smena 38");
+:};

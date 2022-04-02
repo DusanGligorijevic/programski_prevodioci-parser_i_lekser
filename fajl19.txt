@@ -1,0 +1,7 @@
+main(){
+int a &;
+char pera &  [ 5 ] [ 12 ] ;
+a & = 6 ;
+ for (int c in b )
+{ int c & ;  read( pera & [ 1 ] [ 2 ] ); }
+}

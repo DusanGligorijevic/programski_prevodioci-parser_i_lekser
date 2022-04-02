@@ -1,0 +1,5 @@
+main(){
+int a &;
+char pera &  [ 5 ] [ 12 ] ;
+read( a &);
+}

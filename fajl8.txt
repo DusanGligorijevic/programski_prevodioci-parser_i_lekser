@@ -1,0 +1,7 @@
+main(){
+int a &;
+char pera &  [ 5 ] [ 12 ] ;
+a & = 6 ;
+ for (int c in b )
+{ int b & ; char mika &  [ 5 ] [ 12 ] ; b & = 16 ; a & = 6 ; }
+}

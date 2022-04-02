@@ -1,0 +1,7 @@
+main(){
+int d &;
+int b &;
+d & = 5;
+d & = d & + 5 / 3 * d &;
+read ( d & ) ;
+}

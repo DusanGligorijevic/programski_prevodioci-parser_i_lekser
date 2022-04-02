@@ -1,0 +1,13 @@
+main(){
+int d &;
+char pera &  [ 5 ] [ 12 ] ;
+a & = 6 ;
+ for (int c in b )
+{
+int a &, s &;
+read( s & );
+read( a & );
+write ( d & + s & );
+ write ( d & + s & );
+  }
+}
